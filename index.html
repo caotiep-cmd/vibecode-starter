@@ -1,0 +1,109 @@
+﻿<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VibeCode Starter — Tự build app bằng AI cho người mới</title>
+  <meta name="description" content="Hướng dẫn người không chuyên code dùng ChatGPT, Cursor, Lovable, Bolt và API để biến ý tưởng thành landing page, automation, chatbot hoặc MVP thật." />
+  <meta property="og:title" content="VibeCode Starter" />
+  <meta property="og:description" content="Tự build app bằng AI cho người mới — workflow, prompt, tutorial và starter kit thực chiến." />
+  <style>
+    :root{--bg:#080b12;--card:#111827;--muted:#93a4b8;--text:#f8fafc;--line:#233044;--brand:#7c3aed;--brand2:#06b6d4;--ok:#22c55e;--warn:#f59e0b;--max:1120px}
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(circle at top left,#172554 0,#080b12 34%,#05070c 100%);color:var(--text);line-height:1.6} a{color:inherit} .wrap{max-width:var(--max);margin:auto;padding:0 22px}.nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0}.logo{font-weight:850;letter-spacing:-.04em}.logo span{color:#67e8f9}.nav a{color:var(--muted);text-decoration:none;margin-left:20px;font-size:14px}.hero{padding:70px 0 42px;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}.pill{display:inline-flex;gap:8px;align-items:center;border:1px solid #334155;background:rgba(15,23,42,.7);border-radius:999px;padding:7px 12px;color:#cbd5e1;font-size:14px}.hero h1{font-size:clamp(42px,7vw,78px);line-height:.95;margin:20px 0 18px;letter-spacing:-.07em}.grad{background:linear-gradient(90deg,#a78bfa,#22d3ee);-webkit-background-clip:text;background-clip:text;color:transparent}.lead{font-size:20px;color:#cbd5e1;max-width:680px}.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-block;border-radius:14px;padding:14px 18px;text-decoration:none;font-weight:750}.primary{background:linear-gradient(90deg,var(--brand),var(--brand2));color:white}.secondary{border:1px solid #334155;background:rgba(15,23,42,.6);color:#e2e8f0}.note{color:var(--muted);font-size:14px;margin-top:12px}.mock{border:1px solid var(--line);background:linear-gradient(180deg,rgba(17,24,39,.96),rgba(2,6,23,.96));border-radius:24px;padding:18px;box-shadow:0 24px 90px rgba(0,0,0,.45)}.bar{display:flex;gap:7px;margin-bottom:16px}.dot{width:12px;height:12px;border-radius:99px;background:#475569}.screen{background:#020617;border:1px solid #1e293b;border-radius:16px;padding:18px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;color:#c4b5fd;min-height:330px}.screen strong{color:#67e8f9}.section{padding:54px 0}.kicker{color:#67e8f9;text-transform:uppercase;letter-spacing:.14em;font-weight:800;font-size:12px}.section h2{font-size:34px;line-height:1.1;margin:10px 0 18px;letter-spacing:-.04em}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{border:1px solid var(--line);background:rgba(15,23,42,.72);border-radius:20px;padding:20px}.card h3{margin:0 0 8px;font-size:20px}.card p,.card li{color:#cbd5e1}.tag{display:inline-block;font-size:12px;color:#bae6fd;border:1px solid #155e75;background:rgba(8,145,178,.12);padding:4px 8px;border-radius:999px;margin-bottom:12px}.steps{counter-reset:s;display:grid;gap:14px}.step{display:grid;grid-template-columns:46px 1fr;gap:14px;align-items:start}.num{width:38px;height:38px;border-radius:12px;background:#1e1b4b;color:#ddd6fe;display:grid;place-items:center;font-weight:900}.offer{background:linear-gradient(135deg,rgba(124,58,237,.22),rgba(6,182,212,.16));border:1px solid #334155;border-radius:28px;padding:30px}.tools{display:flex;flex-wrap:wrap;gap:10px}.tool{border:1px solid #334155;background:#0f172a;border-radius:999px;padding:9px 12px;color:#dbeafe;font-size:14px}.split{display:grid;grid-template-columns:1fr 1fr;gap:18px}.footer{border-top:1px solid var(--line);padding:30px 0 46px;color:var(--muted);font-size:14px}.mini{font-size:13px;color:#94a3b8}.warn{color:#fbbf24}.ok{color:#86efac}@media(max-width:860px){.hero,.grid,.split{grid-template-columns:1fr}.nav{align-items:flex-start}.nav div:last-child{display:none}.hero{padding-top:34px}.screen{min-height:auto}.card{padding:18px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <div class="logo">VibeCode<span>Starter</span></div>
+      <div><a href="#roadmap">Roadmap</a><a href="#guides">Guides</a><a href="#kit">Free kit</a><a href="#tools">Tools</a></div>
+    </nav>
+
+    <main class="hero">
+      <section>
+        <div class="pill">⚡ Cho non-coder, freelancer, marketer, solo founder</div>
+        <h1>Tự build app bằng AI, <span class="grad">không cần học code từ số 0.</span></h1>
+        <p class="lead">Một bộ hướng dẫn thực chiến để dùng ChatGPT/Cursor/Lovable/Bolt/API biến ý tưởng thành landing page, chatbot, automation hoặc MVP có thể demo được.</p>
+        <div class="cta">
+          <a class="btn primary" href="#kit">Lấy starter kit miễn phí</a>
+          <a class="btn secondary" href="guides/openai-api-first-call.html">Đọc guide đầu tiên</a>
+        </div>
+        <p class="note">Không hứa “làm giàu bằng AI”. Chỉ tập trung vào kỹ năng có output thật: spec rõ, prompt tốt, build nhanh, deploy được.</p>
+      </section>
+      <aside class="mock" aria-label="AI coding workflow preview">
+        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        <div class="screen">
+          <strong>// Vibe coding workflow</strong><br><br>
+          1. Idea → problem statement<br>
+          2. Ask AI for PRD + user flow<br>
+          3. Generate UI copy + wireframe<br>
+          4. Build in Lovable/Bolt/Cursor<br>
+          5. Connect API / database<br>
+          6. Test edge cases<br>
+          7. Deploy + get feedback<br><br>
+          <strong>Prompt:</strong><br>
+          “Act as a senior product engineer. Help me build a tiny MVP for [audience] who need [job]. Ask 5 questions, then produce a step-by-step build plan.”
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <section class="section" id="roadmap"><div class="wrap">
+    <div class="kicker">The path</div>
+    <h2>Học bằng cách build 7 project nhỏ.</h2>
+    <div class="grid">
+      <div class="card"><span class="tag">Day 1</span><h3>Landing page</h3><p>Dùng AI viết offer, copy, FAQ, HTML/CSS và publish bằng GitHub Pages.</p></div>
+      <div class="card"><span class="tag">Day 2</span><h3>Prompt system</h3><p>Biến ý tưởng mơ hồ thành spec, task list, acceptance criteria và test cases.</p></div>
+      <div class="card"><span class="tag">Day 3</span><h3>API call đầu tiên</h3><p>Lấy API key, gọi model, hiểu cost/token, tránh lộ key và lỗi phổ biến.</p></div>
+      <div class="card"><span class="tag">Day 4</span><h3>Chatbot mini</h3><p>Build bot hỏi đáp trên tài liệu nhỏ cho cửa hàng, khóa học hoặc portfolio.</p></div>
+      <div class="card"><span class="tag">Day 5</span><h3>Automation</h3><p>Google Sheet + AI để phân loại lead, viết email nháp, tóm tắt form.</p></div>
+      <div class="card"><span class="tag">Day 6–7</span><h3>Mini SaaS demo</h3><p>Ghép UI + database + API thành MVP có link demo để xin feedback thật.</p></div>
+    </div>
+  </div></section>
+
+  <section class="section" id="guides"><div class="wrap split">
+    <div>
+      <div class="kicker">Start here</div>
+      <h2>Guide đầu tiên: gọi AI API trong 20 phút.</h2>
+      <p style="color:#cbd5e1">Dành cho người mới hoàn toàn: hiểu API key là gì, chạy thử bằng JavaScript, rồi biết cách nhờ AI sửa lỗi thay vì copy/paste mù.</p>
+      <div class="cta"><a class="btn primary" href="guides/openai-api-first-call.html">Mở bài hướng dẫn</a></div>
+    </div>
+    <div class="card">
+      <h3>Bài sắp tới</h3>
+      <ul>
+        <li>Cursor vs Lovable vs Bolt: chọn tool nào cho người mới?</li>
+        <li>Prompt biến idea thành MVP spec.</li>
+        <li>Deploy landing page miễn phí bằng GitHub Pages.</li>
+        <li>Build chatbot hỏi đáp file PDF.</li>
+      </ul>
+    </div>
+  </div></section>
+
+  <section class="section" id="kit"><div class="wrap">
+    <div class="offer">
+      <div class="kicker">Free lead magnet</div>
+      <h2>AI Builder Starter Kit miễn phí</h2>
+      <p style="color:#dbeafe;max-width:780px">Copy bộ prompt dưới đây để bắt đầu. Sau này có thể đổi thành form email/Telegram để thu lead, rồi gắn affiliate hoặc bán mini-course.</p>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><div><strong>Idea → MVP prompt</strong><br><span class="mini">Biến ý tưởng thành phạm vi build trong 1 ngày.</span></div></div>
+        <div class="step"><div class="num">2</div><div><strong>Debug prompt</strong><br><span class="mini">Dán lỗi, context, mục tiêu; bắt AI hỏi lại trước khi sửa.</span></div></div>
+        <div class="step"><div class="num">3</div><div><strong>Launch prompt</strong><br><span class="mini">Tạo landing copy, FAQ, post launch và checklist feedback.</span></div></div>
+      </div>
+      <div class="cta"><a class="btn secondary" href="prompt-pack.md">Xem prompt pack</a><a class="btn primary" href="mailto:hello@example.com?subject=VibeCode Starter Kit">Nhận bản cập nhật</a></div>
+      <p class="mini warn">Placeholder: thay email/link affiliate thật sau khi chốt brand và kênh phân phối.</p>
+    </div>
+  </div></section>
+
+  <section class="section" id="tools"><div class="wrap">
+    <div class="kicker">Affiliate-ready</div>
+    <h2>Tool stack sẽ review và affiliate sau.</h2>
+    <div class="tools">
+      <span class="tool">Cursor</span><span class="tool">Lovable</span><span class="tool">Bolt.new</span><span class="tool">Replit</span><span class="tool">OpenAI API</span><span class="tool">Claude</span><span class="tool">GitHub Pages</span><span class="tool">Supabase</span><span class="tool">Make/Zapier</span>
+    </div>
+    <p class="note">Nguyên tắc: chỉ affiliate tool/khóa học mình có thể giải thích rõ use case, giá trị và limitation. Không bán hype.</p>
+  </div></section>
+
+  <footer class="footer"><div class="wrap">VibeCode Starter — Practical AI coding for beginners. Built as a lean MVP. <span class="ok">Next: publish + write 3 SEO guides.</span></div></footer>
+</body>
+</html>
+

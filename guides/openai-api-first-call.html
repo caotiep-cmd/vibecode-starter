@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gọi AI API đầu tiên trong 20 phút — VibeCode Starter</title>
+  <meta name="description" content="Hướng dẫn beginner gọi AI API đầu tiên: API key, request, lỗi thường gặp, bảo mật key và bài tập nhỏ." />
+  <style>
+    :root{--bg:#070b12;--card:#101827;--text:#f8fafc;--muted:#94a3b8;--line:#263244;--brand:#7c3aed;--cyan:#06b6d4}*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#0f172a,#030712);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.7}.wrap{max-width:880px;margin:auto;padding:28px 22px 70px}a{color:#67e8f9}.back{text-decoration:none;color:#cbd5e1}.pill{display:inline-block;border:1px solid #334155;background:#0f172a;border-radius:999px;padding:6px 10px;color:#bae6fd;font-size:13px;margin-top:34px}h1{font-size:clamp(36px,6vw,62px);line-height:1;letter-spacing:-.06em;margin:18px 0}.lead{font-size:20px;color:#cbd5e1}.card{border:1px solid var(--line);background:rgba(15,23,42,.78);border-radius:20px;padding:22px;margin:22px 0}h2{font-size:30px;line-height:1.15;letter-spacing:-.03em;margin-top:42px}h3{margin-bottom:6px}code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}pre{background:#020617;border:1px solid #1e293b;border-radius:16px;padding:18px;overflow:auto;color:#d8b4fe}.warn{border-left:4px solid #f59e0b;padding-left:14px;color:#fde68a}.ok{border-left:4px solid #22c55e;padding-left:14px;color:#bbf7d0}.muted{color:var(--muted)}.btn{display:inline-block;text-decoration:none;background:linear-gradient(90deg,var(--brand),var(--cyan));padding:13px 17px;border-radius:14px;font-weight:800;color:white}.check li{margin:8px 0}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <a class="back" href="../index.html">← VibeCode Starter</a>
+    <div class="pill">Beginner guide • 20 phút</div>
+    <h1>Gọi AI API đầu tiên trong 20 phút</h1>
+    <p class="lead">Mục tiêu: hiểu API key là gì, chạy một request đơn giản, biết lỗi phổ biến và không vô tình lộ key.</p>
+
+    <div class="card">
+      <strong>Bạn sẽ build gì?</strong>
+      <p>Một script nhỏ gửi câu hỏi tới AI model và nhận câu trả lời. Đây là nền tảng để sau này build chatbot, tool tóm tắt, automation hoặc mini SaaS.</p>
+    </div>
+
+    <h2>1. API là gì, nói đơn giản?</h2>
+    <p>API giống như một cái quầy order. App của bạn gửi yêu cầu: “hãy tóm tắt đoạn này”, “hãy viết email này”, “hãy phân loại lead này”. Nhà cung cấp AI trả lại kết quả để app dùng tiếp.</p>
+    <p><strong>API key</strong> giống mật khẩu thanh toán. Ai có key có thể dùng quota/tài khoản của bạn, nên không được paste public lên GitHub, Facebook, hay frontend code.</p>
+
+    <h2>2. Chuẩn bị</h2>
+    <ul>
+      <li>Node.js đã cài trên máy.</li>
+      <li>Một API key từ nhà cung cấp AI bạn chọn.</li>
+      <li>Một folder project trống.</li>
+    </ul>
+    <p class="warn"><strong>Quan trọng:</strong> guide này dùng placeholder <code>YOUR_API_KEY</code>. Khi publish website/app thật, đừng để key trong HTML/JS chạy trên browser.</p>
+
+    <h2>3. Tạo file chạy thử</h2>
+    <p>Tạo file <code>first-ai-call.js</code>:</p>
+    <pre><code>const API_KEY = process.env.AI_API_KEY;
+
+async function main() {
+  if (!API_KEY) {
+    throw new Error('Missing AI_API_KEY environment variable');
+  }
+
+  const response = await fetch('https://api.openai.com/v1/responses', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${API_KEY}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      model: 'gpt-4.1-mini',
+      input: 'Explain APIs to a beginner in 3 bullet points.'
+    })
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`API error ${response.status}: ${errorText}`);
+  }
+
+  const data = await response.json();
+  console.log(data.output_text);
+}
+
+main().catch(console.error);</code></pre>
+
+    <h2>4. Chạy script</h2>
+    <p>Trên terminal:</p>
+    <pre><code># macOS/Linux
+export AI_API_KEY="your_key_here"
+node first-ai-call.js
+
+# Windows PowerShell
+$env:AI_API_KEY="your_key_here"
+node first-ai-call.js</code></pre>
+
+    <h2>5. Lỗi thường gặp</h2>
+    <div class="card">
+      <h3>401 Unauthorized</h3>
+      <p class="muted">Key sai, key hết hạn, hoặc biến môi trường chưa được set đúng.</p>
+      <h3>429 Rate limit</h3>
+      <p class="muted">Gửi quá nhiều request hoặc tài khoản/quota chưa đủ. Đợi một lúc hoặc kiểm tra billing/limits.</p>
+      <h3>Model not found</h3>
+      <p class="muted">Tên model không đúng hoặc tài khoản chưa có quyền dùng model đó. Đổi sang model rẻ/phổ biến hơn.</p>
+      <h3>Fetch is not defined</h3>
+      <p class="muted">Node quá cũ. Cập nhật Node.js bản mới.</p>
+    </div>
+
+    <h2>6. Prompt debug khi bị lỗi</h2>
+    <pre><code>Act as a patient senior developer.
+
+I am trying to make my first AI API call.
+Goal: [what I expected]
+Error: [paste exact error]
+Code: [paste code]
+Environment: Windows PowerShell / Node version / provider
+
+Tell me the 3 most likely causes, what to check first, and the smallest safe fix.</code></pre>
+
+    <h2>7. Mini project tiếp theo</h2>
+    <p class="ok"><strong>Build next:</strong> một tool tóm tắt feedback khách hàng. Input là 10 dòng feedback, output là: pain points, feature requests, sentiment, recommended next action.</p>
+    <p><a class="btn" href="../index.html#kit">Lấy prompt pack miễn phí</a></p>
+  </main>
+</body>
+</html>
