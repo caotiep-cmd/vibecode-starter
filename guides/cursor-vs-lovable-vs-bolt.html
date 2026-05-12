@@ -1,0 +1,48 @@
+﻿<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cursor vs Lovable vs Bolt: người mới nên dùng tool nào? — VibeCode Starter</title>
+  <meta name="description" content="So sánh Cursor, Lovable và Bolt cho người mới build app bằng AI: nên dùng khi nào, điểm mạnh/yếu, workflow đề xuất." />
+  <style>
+    :root{--bg:#070b12;--card:#101827;--text:#f8fafc;--muted:#94a3b8;--line:#263244;--brand:#7c3aed;--cyan:#06b6d4}*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#0f172a,#030712);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.7}.wrap{max-width:920px;margin:auto;padding:28px 22px 70px}a{color:#67e8f9}.back{text-decoration:none;color:#cbd5e1}.pill{display:inline-block;border:1px solid #334155;background:#0f172a;border-radius:999px;padding:6px 10px;color:#bae6fd;font-size:13px;margin-top:34px}h1{font-size:clamp(36px,6vw,60px);line-height:1;letter-spacing:-.06em;margin:18px 0}.lead{font-size:20px;color:#cbd5e1}.card{border:1px solid var(--line);background:rgba(15,23,42,.78);border-radius:20px;padding:22px;margin:22px 0}h2{font-size:30px;line-height:1.15;letter-spacing:-.03em;margin-top:42px}table{width:100%;border-collapse:collapse;margin:18px 0;background:#0b1220;border:1px solid var(--line);border-radius:16px;overflow:hidden}th,td{border-bottom:1px solid var(--line);padding:13px;text-align:left;vertical-align:top}th{color:#bae6fd;background:#111827}tr:last-child td{border-bottom:0}.muted{color:var(--muted)}.ok{border-left:4px solid #22c55e;padding-left:14px;color:#bbf7d0}.warn{border-left:4px solid #f59e0b;padding-left:14px;color:#fde68a}.btn{display:inline-block;text-decoration:none;background:linear-gradient(90deg,var(--brand),var(--cyan));padding:13px 17px;border-radius:14px;font-weight:800;color:white}code{background:#020617;border:1px solid #1e293b;border-radius:6px;padding:2px 5px}
+  </style>
+</head>
+<body><main class="wrap">
+  <a class="back" href="../index.html">← VibeCode Starter</a>
+  <div class="pill">Tool choice • Beginner-friendly</div>
+  <h1>Cursor vs Lovable vs Bolt: người mới nên dùng tool nào?</h1>
+  <p class="lead">Câu trả lời ngắn: nếu bạn chưa biết code, bắt đầu bằng Lovable/Bolt để ra prototype nhanh. Khi cần sửa sâu, chuyển sang Cursor.</p>
+
+  <div class="card"><strong>Nguyên tắc chọn tool:</strong> Đừng chọn vì tool đang hot. Chọn theo việc bạn cần làm trong 2 giờ tới: phác thảo app, chỉnh code, hay deploy demo.</div>
+
+  <h2>So sánh nhanh</h2>
+  <table>
+    <tr><th>Tool</th><th>Phù hợp nhất khi</th><th>Điểm mạnh</th><th>Điểm yếu</th></tr>
+    <tr><td><strong>Lovable</strong></td><td>Bạn muốn mô tả ý tưởng và có UI/app demo nhanh.</td><td>Rất nhanh cho MVP, landing, dashboard đơn giản.</td><td>Dễ bị kẹt nếu app phức tạp hoặc cần kiểm soát code sâu.</td></tr>
+    <tr><td><strong>Bolt</strong></td><td>Bạn muốn build web app nhanh trong browser.</td><td>Prototype tốt, dễ nhìn file/code, tốc độ cao.</td><td>Có thể gặp lỗi dependency/build; cần biết debug cơ bản.</td></tr>
+    <tr><td><strong>Cursor</strong></td><td>Bạn đã có code/project và muốn sửa, refactor, thêm feature.</td><td>Mạnh nhất để làm việc nghiêm túc với codebase.</td><td>Người mới dễ choáng nếu chưa hiểu file structure.</td></tr>
+  </table>
+
+  <h2>Workflow mình khuyên cho beginner</h2>
+  <ol>
+    <li><strong>Viết spec bằng ChatGPT/Claude:</strong> user, problem, flow, must-have features.</li>
+    <li><strong>Prototype bằng Lovable hoặc Bolt:</strong> tạo UI + logic đơn giản.</li>
+    <li><strong>Test như người dùng thật:</strong> click từng flow, ghi lỗi cụ thể.</li>
+    <li><strong>Chuyển sang Cursor khi cần sửa sâu:</strong> dán lỗi, yêu cầu sửa từng phần nhỏ.</li>
+    <li><strong>Deploy sớm:</strong> đưa link cho 3–5 người xem trước khi polish.</li>
+  </ol>
+
+  <h2>Prompt khởi động</h2>
+  <div class="card">
+    <p><code>Act as a senior product engineer. I am a non-coder. Help me build a tiny MVP for [target user] who need [job]. Ask up to 5 questions, then produce a simple spec that I can paste into Lovable/Bolt.</code></p>
+  </div>
+
+  <h2>Khi nào không nên dùng AI builder?</h2>
+  <p class="warn">Nếu app cần bảo mật cao, thanh toán thật, dữ liệu nhạy cảm, logic pháp lý/tài chính nghiêm trọng — đừng launch mù. Dùng AI để prototype, nhưng cần review kỹ trước khi đưa user thật.</p>
+
+  <h2>Kết luận</h2>
+  <p class="ok"><strong>Beginner path:</strong> ChatGPT/Claude để nghĩ rõ → Lovable/Bolt để dựng nhanh → Cursor để sửa sâu → GitHub/Vercel/Netlify để deploy.</p>
+  <p><a class="btn" href="../prompt-pack.html">Lấy prompt pack</a></p>
+</main></body></html>

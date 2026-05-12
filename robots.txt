@@ -1,0 +1,3 @@
+﻿User-agent: *
+Allow: /
+Sitemap: https://caotiep-cmd.github.io/vibecode-starter/sitemap.xml
