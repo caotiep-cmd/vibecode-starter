@@ -1,0 +1,52 @@
+﻿name: Beta Build Plan request
+description: Request a beta AI build plan review
+title: "Beta Build Plan request: "
+labels: ["beta-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for trying VibeCode Starter. Share enough context for a practical MVP/build-plan review.
+  - type: input
+    id: contact
+    attributes:
+      label: Contact
+      description: Email, X/LinkedIn, or preferred contact method
+      placeholder: your@email.com
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What do you want to build?
+      description: Describe the idea in plain language.
+    validations:
+      required: true
+  - type: input
+    id: user
+    attributes:
+      label: Target user
+      placeholder: e.g. freelancers, shop owners, teachers, job seekers
+    validations:
+      required: true
+  - type: dropdown
+    id: level
+    attributes:
+      label: Your skill level
+      options:
+        - Non-coder
+        - Beginner
+        - Some coding experience
+        - Technical but new to AI tools
+    validations:
+      required: true
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Constraints
+      description: Time, budget, tools you prefer, anything you cannot use.
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome
+      description: What would make this review useful for you?
